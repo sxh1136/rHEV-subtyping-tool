@@ -19,7 +19,7 @@ If p-distance and patristic distance of input sequence to reference genomes are 
 
 Hypothetically, conflicts in subtype assignment can occur and will be reported by the tool (step 6). For example, imagine a scenario where 10 references with patristic distance less than the cutoff threshold to the input sequence are reported. It is possible for 9 of the references to belong to one subtype, with the one remaining reference belonging to another. If this occurs, an update of the cutoff thresholds using the new input sequence as a reference is required. 
 
-##Usage
+### Usage
 ```
 infer_subtype.py <input.fasta>
 ```
