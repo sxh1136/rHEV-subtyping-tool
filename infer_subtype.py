@@ -16,9 +16,8 @@ def calculate_p_distance(input_fasta, reference_fasta):
 
 def infer_new_tree(existing_alignment, new_sequence, existing_tree, output_dir):
     # Run the second script to infer a new ML tree
-    output_alignment = os.path.join(output_dir, f"{os.path.basename(existing_alignment).split('.')[0]}_updated.fasta")
-    output_tree = os.path.join(output_dir, f"{os.path.basename(existing_tree).split('.')[0]}_reoptimised")
-    
+    output_alignment = os.path.join(output_dir, f"{os.path.basename(new_sequence).split('.')[0]}_updated.fasta")
+    output_tree = os.path.join(output_dir, f"{os.path.basename(new_sequence).split('.')[0]}_reoptimised")
     command = f"python3 infer_new_ML_tree.py {existing_alignment} {new_sequence} {existing_tree} {output_alignment} {output_tree}"
     subprocess.run(command, shell=True)
     
