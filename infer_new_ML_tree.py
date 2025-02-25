@@ -5,9 +5,15 @@ def add_sequence_to_msa(existing_alignment, new_sequence, output_alignment):
     mafft_command = f"mafft --quiet --add {new_sequence} --keeplength {existing_alignment} > {output_alignment}"
     subprocess.run(mafft_command, shell=True)
 
-def add_sequence_to_tree(output_alignment, existing_tree, output_tree):
-    iqtree_command = f"iqtree2 -redo --quiet -s {output_alignment} -g {existing_tree} -pre {output_tree} -m GTR+F+G4"
+def run_phylogenetic_placement(output_alignment, existing_tree):
+    # Run IQ-TREE with the guide tree
+    iqtree_command = f"iqtree2 -redo --quiet -s {output_alignment} -g {existing_tree} -pre {output_alignment}_pp -m GTR+F+G4"
     subprocess.run(iqtree_command, shell=True)
+
+def infer_global_optimization_tree(output_alignment, output_tree):
+    # Run IQ-TREE with the constraint tree for optimization
+    iqtree_command2 = f"iqtree2 -redo --quiet -s {output_alignment} -t {output_alignment}_pp.treefile -pre {output_tree} -m GTR+F+G4"
+    subprocess.run(iqtree_command2, shell=True)
 
 def main():
     if len(sys.argv) != 4 and len(sys.argv) != 6:
@@ -31,8 +37,11 @@ def main():
     # Add new sequence to existing alignment
     add_sequence_to_msa(existing_alignment, new_sequence, output_alignment)
     
-    # Add new sequence to existing tree
-    add_sequence_to_tree(output_alignment, existing_tree, output_tree)
+    # Run IQ-TREE phylogenetic placement first
+    run_phylogenetic_placement(output_alignment, existing_tree)
+    
+    # Run IQ-TREE with the constraint tree for optimization
+    infer_global_optimization_tree(output_alignment, output_tree)
 
     print("\nOperation completed successfully.")
 

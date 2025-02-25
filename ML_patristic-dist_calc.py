@@ -88,6 +88,16 @@ def main(input_newick, predefined_label, csv_file):
     else:
         print(f"No clade and subtype could be inferred for '{predefined_label}'. This query may belong to a novel subtype.")
 
+    # Extract closest label after processing filtered distances
+    closest_label = None
+    if filtered_distances:  # Only try to get the label if filtered_distances is not empty
+        closest_label = filtered_distances[0][1]  # First element's label
+    # Now print the closest label
+    if closest_label:
+        print(f"\033[92mClosest reference genome by ML patristic distance is {closest_label}\033[0m")
+    else:
+        print(f"\033[91mNo reference genome under the distance threshold found.\033[0m")
+
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: python script.py <input_newick> <predefined_label> <csv_file>")
