@@ -2,7 +2,7 @@
 
 Accompanies manuscript under review.
 
-Note: Currently only supports individual sequences. If multifasta is passed to script, only the first sequence will be analysed. 
+Currently only supports individual sequences. If multifasta is passed to script, only the first sequence will be analysed. 
 
 Tool workflow:
 1. Calculates p-distance of input sequence to reference genomes.
@@ -17,9 +17,10 @@ If p-distance and patristic distance of input sequence to reference genomes are 
   1. Input sequence is highly divergent from reference genomes and belongs to a novel subtype.
   2. Input sequence is highly divergent from reference genomes and does not belong to rHEV.
 
-Hypothetically, conflicts in subtype assignment can occur and will be reported by the tool (step 6). For example, imagine a scenario where 10 references with patristic distance less than the cutoff threshold to the input sequence are reported. It is possible for 9 of the references to belong to one subtype, with the one remaining reference belonging to another. If this occurs, an update of the cutoff thresholds using the new input sequence as a reference is required. 
-
 ### Usage
 ```{python}
 python infer_subtype.py <input.fasta>
 ```
+
+Note: hypothetically, conflicts in subtype assignment can occur and will be reported by the tool (step 6). For example, imagine a scenario where 10 references with patristic distance less than the cutoff threshold to the input sequence are reported. It is possible for 9 of the references to belong to one subtype, with the one remaining reference belonging to another. If this occurs, an update of the cutoff thresholds using the new input sequence as a reference is required.
+
