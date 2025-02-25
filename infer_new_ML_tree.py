@@ -3,17 +3,30 @@ import sys
 
 def add_sequence_to_msa(existing_alignment, new_sequence, output_alignment):
     mafft_command = f"mafft --quiet --add {new_sequence} --keeplength {existing_alignment} > {output_alignment}"
-    subprocess.run(mafft_command, shell=True)
+    try:
+        subprocess.run(mafft_command, shell=True, check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to add sequence to alignment: {e}")
+        sys.exit(1)
 
 def run_phylogenetic_placement(output_alignment, existing_tree):
     # Run IQ-TREE with the guide tree
     iqtree_command = f"iqtree2 -redo --quiet -s {output_alignment} -g {existing_tree} -pre {output_alignment}_pp -m GTR+F+G4"
-    subprocess.run(iqtree_command, shell=True)
+    try:
+        subprocess.run(iqtree_command, shell=True, check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to perform phylogenetic placement: {e}")
+        sys.exit(1)
+
 
 def infer_global_optimization_tree(output_alignment, output_tree):
     # Run IQ-TREE with the constraint tree for optimization
     iqtree_command2 = f"iqtree2 -redo --quiet -s {output_alignment} -t {output_alignment}_pp.treefile -pre {output_tree} -m GTR+F+G4"
-    subprocess.run(iqtree_command2, shell=True)
+    try:
+        subprocess.run(iqtree_command2, shell=True, check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to infer optimized tree: {e}")
+        sys.exit(1)
 
 def main():
     if len(sys.argv) != 4 and len(sys.argv) != 6:

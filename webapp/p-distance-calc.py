@@ -60,7 +60,7 @@ def main(input_fasta, reference_fasta):
         }
 
         # Write the output to a file
-        with open("p_distance_output.json", "w") as file:
+        with open("output/p_distance_output.json", "w") as file:
             json.dump(output, file)
     except Exception as e:
         sys.stderr.write(f"An error occurred: {e}\n")

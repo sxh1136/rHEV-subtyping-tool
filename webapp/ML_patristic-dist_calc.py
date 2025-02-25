@@ -85,12 +85,13 @@ def main(input_newick, predefined_label, csv_file):
     # Prepare output dictionary
     output = {
         "closest_reference_ml": closest_label,
+        "ml_distance": filtered_distances[0][0],
         "conflicts": conflicts,
         "subtype_assignment": f"Clade={most_common_clade}, Subtype={most_common_subtype}" if most_common_clade and most_common_subtype else "Not determined"
     }
 
     # Write the output to a file
-    with open("subtype_output.json", "w") as file:
+    with open("output/subtype_output.json", "w") as file:
         json.dump(output, file)
 
 if __name__ == "__main__":
