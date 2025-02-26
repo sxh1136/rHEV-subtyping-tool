@@ -15,7 +15,8 @@ Tool workflow:
 
 If p-distance and patristic distance of input sequence to reference genomes are higher than cutoff thresholds, this will be noted by tool. This may occur in the follow scenarios:
   1. Input sequence is highly divergent from reference genomes and belongs to a novel subtype.
-  2. Input sequence is highly divergent from reference genomes and does not belong to rHEV.
+  2. Input sequence is an recombinant. Please check for recombination using RDP5 or similar.
+  3. Input sequence is highly divergent from reference genomes and does not belong to rHEV.
 
 ### Usage
 ```{python}
