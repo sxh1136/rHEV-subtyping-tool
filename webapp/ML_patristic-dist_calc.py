@@ -62,10 +62,17 @@ def main(input_newick, predefined_label, csv_file):
     # Check for conflicting clades and subtypes
     clades = []
     subtypes = []
+    conflicting_taxa_info = []
     for dist, label in filtered_distances:
         if label in csv_data:
             clades.append(csv_data[label]['Clade'])
             subtypes.append(csv_data[label]['Subtype'])
+            if len(set(clades)) > 1 or len(set(subtypes)) > 1:
+                conflicting_taxa_info.append({
+                    'taxon': label,
+                    'clade': csv_data[label]['Clade'],
+                    'subtype': csv_data[label]['Subtype']
+                })
 
     conflicts = False
     most_common_clade = None
@@ -73,6 +80,10 @@ def main(input_newick, predefined_label, csv_file):
     if clades and subtypes:
         if len(set(clades)) > 1 or len(set(subtypes)) > 1:
             conflicts = True
+            # In case of conflicts, you could still provide a most common clade/subtype
+            # or handle it as "Not determined" in your output
+            most_common_clade = Counter(clades).most_common(1)[0][0]
+            most_common_subtype = Counter(subtypes).most_common(1)[0][0]
         else:
             most_common_clade = Counter(clades).most_common(1)[0][0]
             most_common_subtype = Counter(subtypes).most_common(1)[0][0]
@@ -85,14 +96,25 @@ def main(input_newick, predefined_label, csv_file):
     # Prepare output dictionary
     output = {
         "closest_reference_ml": closest_label,
-        "ml_distance": filtered_distances[0][0],
+        "ml_distance": filtered_distances[0][0] if filtered_distances else None,
         "conflicts": conflicts,
-        "subtype_assignment": f"Clade={most_common_clade}, Subtype={most_common_subtype}" if most_common_clade and most_common_subtype else "Not determined"
+        "conflict_summary": {
+            "conflicting_taxa": [{"taxon": taxon['taxon'], "clade": taxon['clade'], "subtype": taxon['subtype']} for taxon in conflicting_taxa_info],
+            "clades": list(set(clades)),
+            "subtypes": list(set(subtypes))
+        },
+        "subtype_assignment": f"Clade={most_common_clade}, Subtype={most_common_subtype}" if most_common_clade and most_common_subtype else "Clade=Unknown, Subtype=Unknown"
     }
 
     # Write the output to a file
     with open("output/subtype_output.json", "w") as file:
         json.dump(output, file)
+
+    # Write patristic distances to a file
+    with open("output/patristic_distances.txt", "w") as file:
+        file.write(f"Patristic Distances from {predefined_label}:\n")
+        for dist, label in distance_list:
+            file.write(f"{label}: {dist}\n")
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:

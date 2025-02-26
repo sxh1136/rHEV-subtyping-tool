@@ -38,14 +38,20 @@ def main(input_fasta, reference_fasta):
         input_id = next(SeqIO.parse(input_fasta, "fasta")).id  # Get the ID of the input sequence
         min_distance = float('inf')
         min_id = None
-
+        
         # Read all reference sequences first to determine the total count
         reference_records = list(SeqIO.parse(reference_fasta, "fasta"))
         total_references = len(reference_records)
         
+        # Dictionary to store p-distances for each reference
+        p_distances = {}
+        
         for index, record in enumerate(reference_records):
             ref_seq = record.seq
             distance = calculate_p_distance(str(input_seq), str(ref_seq))  
+            
+            # Store p-distance for this reference
+            p_distances[record.id] = distance
             
             # Check if this distance is the smallest found so far
             if distance < min_distance:
@@ -62,6 +68,12 @@ def main(input_fasta, reference_fasta):
         # Write the output to a file
         with open("output/p_distance_output.json", "w") as file:
             json.dump(output, file)
+        
+        # Write p-distances to a file
+        with open("output/p_distances.txt", "w") as file:
+            for ref_id, distance in p_distances.items():
+                file.write(f"{ref_id}: {distance}\n")
+
     except Exception as e:
         sys.stderr.write(f"An error occurred: {e}\n")
         sys.exit(1)

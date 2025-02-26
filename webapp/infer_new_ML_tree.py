@@ -12,7 +12,7 @@ def add_sequence_to_msa(existing_alignment, new_sequence, output_alignment):
 
 def run_phylogenetic_placement(output_alignment, existing_tree):
     # Run IQ-TREE with the guide tree
-    iqtree_command = f"iqtree2 -nt 20 -redo --quiet -s {output_alignment} -g {existing_tree} -pre {output_alignment}_pp -m GTR+F+G4"
+    iqtree_command = f"iqtree2 -seed 2803 -nt 20 -redo --quiet -s {output_alignment} -g {existing_tree} -pre {output_alignment}_pp -m GTR+F+G4"
     try:
         subprocess.run(iqtree_command, shell=True, check=True)
     except subprocess.CalledProcessError as e:
@@ -21,7 +21,7 @@ def run_phylogenetic_placement(output_alignment, existing_tree):
 
 def infer_global_optimization_tree(output_alignment, output_tree):
     # Run IQ-TREE with the constraint tree for optimization
-    iqtree_command2 = f"iqtree2 -nt 20 -redo --quiet -s {output_alignment} -t {output_alignment}_pp.treefile -pre {output_tree} -m GTR+F+G4"
+    iqtree_command2 = f"iqtree2 -seed 2803 -nt 20 -redo --quiet -s {output_alignment} -t {output_alignment}_pp.treefile -pre {output_tree} -m GTR+F+G4"
     try:
         subprocess.run(iqtree_command2, shell=True, check=True)
     except subprocess.CalledProcessError as e:
