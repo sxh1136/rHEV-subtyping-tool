@@ -1,6 +1,6 @@
 import sys
 import json
-import Bio
+import bio
 
 def calculate_p_distance(seq1, seq2):
     # Create a PairwiseAligner object with appropriate scoring
