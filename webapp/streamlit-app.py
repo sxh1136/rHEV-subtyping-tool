@@ -4,7 +4,7 @@ import sys
 import os
 import json
 import tempfile
-from bio import SeqIO
+import Bio
 import time
 import zipfile
 
