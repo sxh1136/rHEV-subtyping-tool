@@ -4,168 +4,140 @@ Dominik Schrempf, Michael Woodhams, Ly Trong Nhan, Thomas Wong
 
 Host:    DT-ASUS (AVX2, FMA3, 125 GB RAM)
 Command: iqtree2 -redo --quiet -s output/rHEV_genomes_12-31-24_updated.fasta -t output/rHEV_genomes_12-31-24_updated.fasta_pp.treefile -pre output/rHEV_genomes_12-31-24_reoptimised -m GTR+F+G4
-Seed:    787755 (Using SPRNG - Scalable Parallel Random Number Generator)
-Time:    Mon Mar  3 11:06:48 2025
+Seed:    782167 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon Mar  3 15:49:20 2025
 Kernel:  AVX+FMA - 1 threads (24 CPU cores detected)
 
 HINT: Use -nt option to specify number of threads because your CPU has 24 cores!
 HINT: -nt AUTO will automatically determine the best number of threads to use.
 
 Reading alignment file output/rHEV_genomes_12-31-24_updated.fasta ... Fasta format detected
-Reading fasta file: done in 0.0022541 secs using 99.95% CPU
+Reading fasta file: done in 0.00229012 secs using 99.73% CPU
+NOTE: Change sequence name 'AB847305.1 Orthohepevirus A DNA, complete genome, isolate: ratIDE079F' -> AB847305.1_Orthohepevirus
 Alignment most likely contains DNA/RNA sequences
 WARNING: 3 sites contain only gaps or ambiguous characters.
-Alignment has 55 sequences with 6912 columns, 3128 distinct patterns
-2849 parsimony-informative, 363 singleton sites, 3700 constant sites
-                                                    Gap/Ambiguity  Composition  p-value
-Analyzing sequences: done in 0.000197843 secs using 100.1% CPU
-   1  PQ488551                                              1.72%    passed     70.68%
-   2  PQ488552                                              1.46%    passed     72.68%
-   3  PQ488553                                              1.35%    passed     69.93%
-   4  PQ488555                                              2.86%    passed     58.19%
-   5  PQ488556                                              1.35%    passed     79.27%
-   6  PQ488558                                              1.43%    passed     61.03%
-   7  PQ488559                                              1.20%    passed     74.21%
-   8  PQ488560                                              1.35%    passed     74.92%
-   9  AB847305.1                                            0.80%    passed     99.35%
-  10  AB847306.1                                            0.84%    passed     30.08%
-  11  AB847307.1                                            1.35%    passed     93.63%
-  12  AB847308.1                                            1.13%    passed     93.47%
-  13  AB847309.1                                            1.01%    passed     35.35%
-  14  GU345043.1                                            1.04%    passed     89.61%
-  15  JN167537.1                                            1.14%    passed     48.27%
-  16  JN167538.1                                            1.13%    passed     75.52%
-  17  JX120573.1                                            1.35%    passed     77.05%
-  18  KM516906.1                                            1.13%    passed     74.15%
-  19  LC145325.1                                            0.97%    passed     98.81%
-  20  LC225388.1                                            0.81%    passed     93.74%
-  21  LC225389.1                                            0.78%    passed     90.86%
-  22  LC549184.1                                            0.74%    passed     97.42%
-  23  LC549185.1                                            1.36%    passed     96.09%
-  24  LC549186.1                                            0.87%    passed     89.74%
-  25  LC549187.1                                            0.87%    passed     87.95%
-  26  LC573546.1                                            0.58%    passed     96.57%
-  27  MG600417.1                                            0.87%    passed     95.87%
-  28  MG813927.1                                            1.30%    passed     82.22%
-  29  MH729811.1                                            2.21%    passed     54.77%
-  30  MH729812.1                                            2.08%    passed     84.15%
-  31  MK050105.1                                            1.04%    passed     67.82%
-  32  MN450851.1                                            1.30%    passed     79.64%
-  33  MN450852.1                                            1.35%    passed     79.02%
-  34  MN450853.1                                            0.71%    passed     95.45%
-  35  MN450854.1                                            1.35%    passed     69.59%
-  36  MN450855.1                                            1.30%    passed     84.43%
-  37  MT210621.1                                            1.36%    passed     97.63%
-  38  MW795566.1                                            1.19%    passed     18.05%
-  39  MW795567.1                                            1.17%    passed     22.09%
-  40  MZ357113.1                                            1.04%    passed     41.32%
-  41  MZ542728.1                                            0.69%    passed     95.64%
-  42  MZ868954.1                                            0.69%    passed     93.03%
-  43  NC_038504.1                                           1.04%    passed     76.94%
-  44  OM037395.1                                            4.51%    passed     67.64%
-  45  OM037396.1                                            4.48%    passed     68.96%
-  46  ON644869.1                                            2.08%    passed     86.20%
-  47  ON887282.1                                            2.69%    passed     16.70%
-  48  ON887283.1                                            2.69%    passed     96.10%
-  49  OP947206.1                                            1.13%    passed     89.26%
-  50  OP947207.1                                            1.13%    passed     96.44%
-  51  OP947209.1                                            1.13%    passed     99.06%
-  52  OP947210.1                                            4.08%    passed     89.41%
-  53  OP947211.1                                            0.78%    passed     94.83%
-  54  OQ067397.1                                            0.65%    passed     91.84%
-  55  Rocahepevirus-ratti-strain-WTSRN-CPOS-liver-sample    1.13%    passed     64.19%
-****  TOTAL                                                 1.41%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Alignment has 55 sequences with 6912 columns, 3125 distinct patterns
+2853 parsimony-informative, 358 singleton sites, 3701 constant sites
+                           Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.000163397 secs
+   1  PQ488551                     1.72%    passed     71.85%
+   2  PQ488552                     1.46%    passed     73.94%
+   3  PQ488553                     1.35%    passed     71.23%
+   4  PQ488555                     2.86%    passed     59.47%
+   5  PQ488556                     1.35%    passed     80.34%
+   6  PQ488558                     1.43%    passed     62.32%
+   7  PQ488559                     1.20%    passed     73.10%
+   8  PQ488560                     1.35%    passed     76.15%
+   9  AB847305.1                   0.80%    passed     99.38%
+  10  AB847306.1                   0.84%    passed     30.84%
+  11  AB847307.1                   1.35%    passed     93.47%
+  12  AB847308.1                   1.13%    passed     92.91%
+  13  AB847309.1                   1.01%    passed     36.11%
+  14  GU345043.1                   1.04%    passed     88.87%
+  15  JN167537.1                   1.14%    passed     47.81%
+  16  JN167538.1                   1.13%    passed     74.41%
+  17  JX120573.1                   1.35%    passed     78.16%
+  18  KM516906.1                   1.13%    passed     73.21%
+  19  LC145325.1                   0.97%    passed     98.62%
+  20  LC225388.1                   0.81%    passed     93.24%
+  21  LC225389.1                   0.78%    passed     90.71%
+  22  LC549184.1                   0.74%    passed     97.46%
+  23  LC549185.1                   1.36%    passed     96.34%
+  24  LC549186.1                   0.87%    passed     89.49%
+  25  LC549187.1                   0.87%    passed     87.81%
+  26  LC573546.1                   0.58%    passed     96.85%
+  27  MG600417.1                   0.87%    passed     96.16%
+  28  MG813927.1                   1.30%    passed     83.09%
+  29  MH729811.1                   2.21%    passed     53.44%
+  30  MH729812.1                   2.08%    passed     84.74%
+  31  MK050105.1                   1.04%    passed     67.16%
+  32  MN450851.1                   1.30%    passed     80.50%
+  33  MN450852.1                   1.35%    passed     80.15%
+  34  MN450853.1                   0.71%    passed     95.61%
+  35  MN450854.1                   1.35%    passed     70.88%
+  36  MN450855.1                   1.30%    passed     85.26%
+  37  MT210621.1                   1.36%    passed     97.88%
+  38  MW795566.1                   1.19%    passed     17.40%
+  39  MW795567.1                   1.17%    passed     21.33%
+  40  MZ357113.1                   1.04%    passed     41.04%
+  41  MZ542728.1                   0.69%    passed     95.68%
+  42  MZ868954.1                   0.69%    passed     93.58%
+  43  NC_038504.1                  1.04%    passed     75.78%
+  44  OM037395.1                   4.51%    passed     66.45%
+  45  OM037396.1                   4.48%    passed     67.78%
+  46  ON644869.1                   2.08%    passed     85.40%
+  47  ON887282.1                   2.69%    passed     16.71%
+  48  ON887283.1                   2.69%    passed     95.85%
+  49  OP947206.1                   1.13%    passed     88.99%
+  50  OP947207.1                   1.13%    passed     96.22%
+  51  OP947209.1                   1.13%    passed     98.97%
+  52  OP947210.1                   4.08%    passed     89.95%
+  53  OP947211.1                   0.78%    passed     94.25%
+  54  OQ067397.1                   0.65%    passed     91.32%
+  55  AB847305.1_Orthohepevirus    0.80%    passed     99.38%
+****  TOTAL                        1.41%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: AB847305.1_Orthohepevirus is identical to AB847305.1 but kept for subsequent analysis
 Reading input tree file output/rHEV_genomes_12-31-24_updated.fasta_pp.treefile ...
 
 NOTE: 22 MB RAM (0 GB) is required!
 Estimate model parameters (epsilon = 0.100)
-1. Initial log-likelihood: -112329.577
-2. Current log-likelihood: -96566.176
-3. Current log-likelihood: -96104.624
-4. Current log-likelihood: -96083.204
-5. Current log-likelihood: -96081.760
-6. Current log-likelihood: -96081.583
-Optimal log-likelihood: -96081.551
-Rate parameters:  A-C: 1.89132  A-G: 13.15225  A-T: 2.58124  C-G: 0.92619  C-T: 22.80223  G-T: 1.00000
+1. Initial log-likelihood: -110684.968
+2. Current log-likelihood: -95260.600
+3. Current log-likelihood: -94810.777
+4. Current log-likelihood: -94790.099
+5. Current log-likelihood: -94788.776
+6. Current log-likelihood: -94788.626
+Optimal log-likelihood: -94788.598
+Rate parameters:  A-C: 1.90616  A-G: 13.11080  A-T: 2.55347  C-G: 0.92592  C-T: 22.45410  G-T: 1.00000
 Base frequencies:  A: 0.192  C: 0.285  G: 0.290  T: 0.233
 Gamma shape alpha: 0.207
-Parameters optimization took 6 rounds (1.203 sec)
+Parameters optimization took 6 rounds (1.208 sec)
 Wrote distance file to... 
 
 Do NNI search on 1 best initial trees
 Finish initializing candidate tree set (1)
-Current best tree score: -96081.551 / CPU time: 0.073
+Current best tree score: -94788.598 / CPU time: 0.080
 Number of iterations: 1
 --------------------------------------------------------------------
 |               OPTIMIZING CANDIDATE TREE SET                      |
 --------------------------------------------------------------------
 Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 3: -96080.747
-Iteration 10 / LogL: -96080.942 / Time: 0h:0m:3s
-Iteration 20 / LogL: -96080.767 / Time: 0h:0m:6s
-Iteration 30 / LogL: -96095.063 / Time: 0h:0m:9s (0h:0m:24s left)
-Iteration 40 / LogL: -96081.646 / Time: 0h:0m:12s (0h:0m:20s left)
-Iteration 50 / LogL: -96081.892 / Time: 0h:0m:15s (0h:0m:17s left)
-Iteration 60 / LogL: -96088.876 / Time: 0h:0m:19s (0h:0m:13s left)
-Iteration 70 / LogL: -96081.135 / Time: 0h:0m:22s (0h:0m:10s left)
-Iteration 80 / LogL: -96080.828 / Time: 0h:0m:25s (0h:0m:7s left)
-Estimate model parameters (epsilon = 0.100)
-BETTER TREE FOUND at iteration 88: -96080.545
-Iteration 90 / LogL: -96081.584 / Time: 0h:0m:28s (0h:0m:31s left)
-Iteration 100 / LogL: -96081.584 / Time: 0h:0m:31s (0h:0m:27s left)
-Iteration 110 / LogL: -96080.565 / Time: 0h:0m:34s (0h:0m:24s left)
-Iteration 120 / LogL: -96080.673 / Time: 0h:0m:37s (0h:0m:21s left)
-Iteration 130 / LogL: -96080.555 / Time: 0h:0m:40s (0h:0m:18s left)
-Iteration 140 / LogL: -96084.697 / Time: 0h:0m:43s (0h:0m:15s left)
-BETTER TREE FOUND at iteration 149: -96080.545
-Iteration 150 / LogL: -96080.666 / Time: 0h:0m:47s (0h:0m:31s left)
-Iteration 160 / LogL: -96086.714 / Time: 0h:0m:50s (0h:0m:28s left)
-Iteration 170 / LogL: -96080.597 / Time: 0h:0m:54s (0h:0m:25s left)
-Iteration 180 / LogL: -96080.599 / Time: 0h:0m:57s (0h:0m:22s left)
-BETTER TREE FOUND at iteration 182: -96080.545
-Iteration 190 / LogL: -96081.092 / Time: 0h:1m:0s (0h:0m:29s left)
-Iteration 200 / LogL: -96080.545 / Time: 0h:1m:4s (0h:0m:26s left)
-Iteration 210 / LogL: -96081.573 / Time: 0h:1m:7s (0h:0m:23s left)
-Iteration 220 / LogL: -96080.695 / Time: 0h:1m:10s (0h:0m:20s left)
-Iteration 230 / LogL: -96080.592 / Time: 0h:1m:14s (0h:0m:16s left)
-Iteration 240 / LogL: -96082.841 / Time: 0h:1m:17s (0h:0m:13s left)
-Iteration 250 / LogL: -96080.548 / Time: 0h:1m:20s (0h:0m:10s left)
-BETTER TREE FOUND at iteration 254: -96080.545
-Iteration 260 / LogL: -96081.832 / Time: 0h:1m:24s (0h:0m:30s left)
-Iteration 270 / LogL: -96081.970 / Time: 0h:1m:27s (0h:0m:27s left)
-Iteration 280 / LogL: -96080.634 / Time: 0h:1m:30s (0h:0m:23s left)
-Iteration 290 / LogL: -96081.552 / Time: 0h:1m:33s (0h:0m:20s left)
-Iteration 300 / LogL: -96084.313 / Time: 0h:1m:36s (0h:0m:17s left)
-Iteration 310 / LogL: -96080.566 / Time: 0h:1m:39s (0h:0m:14s left)
-Iteration 320 / LogL: -96080.849 / Time: 0h:1m:42s (0h:0m:10s left)
-Iteration 330 / LogL: -96080.548 / Time: 0h:1m:46s (0h:0m:7s left)
-Iteration 340 / LogL: -96080.550 / Time: 0h:1m:49s (0h:0m:4s left)
-Iteration 350 / LogL: -96080.564 / Time: 0h:1m:52s (0h:0m:1s left)
-TREE SEARCH COMPLETED AFTER 355 ITERATIONS / Time: 0h:1m:54s
+BETTER TREE FOUND at iteration 3: -94787.632
+Iteration 10 / LogL: -94787.852 / Time: 0h:0m:4s
+Iteration 20 / LogL: -94787.681 / Time: 0h:0m:7s
+Iteration 30 / LogL: -94799.690 / Time: 0h:0m:11s (0h:0m:27s left)
+Iteration 40 / LogL: -94787.816 / Time: 0h:0m:14s (0h:0m:22s left)
+Iteration 50 / LogL: -94787.782 / Time: 0h:0m:16s (0h:0m:18s left)
+Iteration 60 / LogL: -94830.078 / Time: 0h:0m:19s (0h:0m:14s left)
+Iteration 70 / LogL: -94787.808 / Time: 0h:0m:22s (0h:0m:10s left)
+Iteration 80 / LogL: -94787.832 / Time: 0h:0m:25s (0h:0m:7s left)
+Iteration 90 / LogL: -94790.204 / Time: 0h:0m:28s (0h:0m:4s left)
+Iteration 100 / LogL: -94787.942 / Time: 0h:0m:31s (0h:0m:0s left)
+TREE SEARCH COMPLETED AFTER 104 ITERATIONS / Time: 0h:0m:32s
 
 --------------------------------------------------------------------
 |                    FINALIZING TREE SEARCH                        |
 --------------------------------------------------------------------
 Performs final model parameters optimization
 Estimate model parameters (epsilon = 0.010)
-1. Initial log-likelihood: -96080.545
-Optimal log-likelihood: -96080.543
-Rate parameters:  A-C: 1.88537  A-G: 13.15880  A-T: 2.57108  C-G: 0.92689  C-T: 22.80680  G-T: 1.00000
+1. Initial log-likelihood: -94787.632
+Optimal log-likelihood: -94787.631
+Rate parameters:  A-C: 1.89918  A-G: 13.11902  A-T: 2.54346  C-G: 0.92512  C-T: 22.45747  G-T: 1.00000
 Base frequencies:  A: 0.192  C: 0.285  G: 0.290  T: 0.233
-Gamma shape alpha: 0.206
-Parameters optimization took 1 rounds (0.065 sec)
-BEST SCORE FOUND : -96080.543
-Total tree length: 4.906
+Gamma shape alpha: 0.207
+Parameters optimization took 1 rounds (0.056 sec)
+BEST SCORE FOUND : -94787.631
+Total tree length: 4.840
 
-Total number of iterations: 355
-CPU time used for tree search: 112.551 sec (0h:1m:52s)
-Wall-clock time used for tree search: 113.011 sec (0h:1m:53s)
-Total CPU time used: 113.825 sec (0h:1m:53s)
-Total wall-clock time used: 114.285 sec (0h:1m:54s)
+Total number of iterations: 104
+CPU time used for tree search: 30.996 sec (0h:0m:30s)
+Wall-clock time used for tree search: 31.161 sec (0h:0m:31s)
+Total CPU time used: 32.260 sec (0h:0m:32s)
+Total wall-clock time used: 32.431 sec (0h:0m:32s)
 
 Analysis results written to: 
   IQ-TREE report:                output/rHEV_genomes_12-31-24_reoptimised.iqtree
   Maximum-likelihood tree:       output/rHEV_genomes_12-31-24_reoptimised.treefile
   Screen log file:               output/rHEV_genomes_12-31-24_reoptimised.log
 
-Date and Time: Mon Mar  3 11:08:43 2025
+Date and Time: Mon Mar  3 15:49:53 2025
