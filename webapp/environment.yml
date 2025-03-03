@@ -40,7 +40,11 @@ dependencies:
       - altair==5.5.0
       - anyio==4.8.0
       - attrs==25.1.0
+<<<<<<< HEAD
       - biopython==1.84
+=======
+      - biopython==1.83
+>>>>>>> 62a11af3f8ade5135884f01bd2f4711adbc979fa
       - biothings-client==0.4.1
       - blinker==1.9.0
       - cachetools==5.5.2
